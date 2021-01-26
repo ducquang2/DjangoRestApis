@@ -135,5 +135,8 @@ ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8081',
-    'http://192.168.1.204:8082'
+    'http://localhost:8082',
+    'http://192.168.1.204:8082',
+    'http://172.16.4.177:8082',
+    'http://172.16.4.227:1234',
 )
