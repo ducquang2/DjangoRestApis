@@ -7,7 +7,7 @@ from rest_framework import status
 from tutorials.models import Tutorial
 from tutorials.serializers import TutorialSerializer
 from rest_framework.decorators import api_view
-
+import requests
 
 @api_view(['GET', 'POST', 'DELETE'])
 def tutorial_list(request):
@@ -65,3 +65,13 @@ def tutorial_list_published(request):
     if request.method == 'GET': 
         tutorial_serializer =  TutorialSerializer(tutorial, many=True)
         return JsonResponse(tutorial_serializer.data, safe=False)
+@api_view(['GET'])
+def Quang(request):
+    response = requests.get("http://172.16.4.175:8080/api/tutorials")
+   
+    if request.method == 'GET': 
+        return JsonResponse(response.json(),safe=False)
+        
+
+
+
